@@ -13,7 +13,6 @@
 #
 
 class Author < ActiveRecord::Base
-  has_many :papers
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation, :name
   

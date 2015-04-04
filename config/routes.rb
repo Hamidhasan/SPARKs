@@ -1,4 +1,7 @@
 SPARKs::Application.routes.draw do
+  resources :papers
+
+
   resources :authors
   resources :sessions
   get "signin" => "sessions#new", :as => "signin"

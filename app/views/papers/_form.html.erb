@@ -1,0 +1,17 @@
+<%= simple_form_for(@paper) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.association :author %>
+  </div>
+
+  <div class="field">
+      <%= f.label :file %><br>
+      <%= f.file_field :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
