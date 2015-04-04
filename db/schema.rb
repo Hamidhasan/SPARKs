@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< Updated upstream
 ActiveRecord::Schema.define(:version => 20150404021754) do
 
   create_table "authors", :force => true do |t|
@@ -22,15 +21,6 @@ ActiveRecord::Schema.define(:version => 20150404021754) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "encrypted_password"
-=======
-ActiveRecord::Schema.define(:version => 20150404002907) do
-
-  create_table "papers", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "paperFile"
->>>>>>> Stashed changes
   end
 
 end
