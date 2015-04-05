@@ -87,6 +87,6 @@ private
   end
 
   def user_params
-      params.require(:paper).permit(:title, :file)
+      params.require(:paper).permit(:title, :file, :demo)
   end
 end

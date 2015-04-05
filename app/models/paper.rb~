@@ -12,6 +12,7 @@
 
 class Paper < ActiveRecord::Base
   belongs_to :author
+  has_many :question
   attr_accessible :title, :author_id, :file
   mount_uploader :file, FileUploader
 end
