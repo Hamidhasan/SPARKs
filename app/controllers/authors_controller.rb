@@ -6,6 +6,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(params[:author])
     if @author.save
+      sign_in(@author)
       redirect_to @author, notice: 'Author was successfully created!'
     else
       render action: "new"
@@ -13,6 +14,10 @@ class AuthorsController < ApplicationController
   end
   
   def show
-    @author = Author.find(params[:id])
+    if signed_in?
+      @author = Author.find(params[:id])
+    else
+      deny_access
+    end
   end
 end
