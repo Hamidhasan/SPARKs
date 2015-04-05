@@ -1,4 +1,7 @@
 SPARKs::Application.routes.draw do
+  resources :questions
+
+
   resources :papers
 
 

@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  paper_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Question < ActiveRecord::Base
+  belongs_to :paper
+  attr_accessible :content, :id
+end

@@ -7,10 +7,12 @@
 #  author_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  file       :string(255)
 #
 
 class Paper < ActiveRecord::Base
   belongs_to :author
+  has_many :question
   attr_accessible :title, :author_id, :file
   mount_uploader :file, FileUploader
 end

@@ -60,10 +60,20 @@ Then(/^I should be able to see the new paper's page$/) do
 end
 
 When(/^I add a new title and upload a new file$/) do
-  pending # express the regexp above with the code you wish you had
+  # pending # express the regexp above with the code you wish you had
+  fill_in 'Title', :with => "Research paper"
+  #click_button 'Browse'
+  #click_button 'Cancel'
+  #click_button 'Open'
+  click_button 'Create Paper'
 end
 
 Then(/^I should be able to see the new paper's being completed$/) do
-  pending # express the regexp above with the code you wish you had
+  assert page.has_content?("Paper was successfully created")
+  # pending # express the regexp above with the code you wish you had
 end
+
+#question steps
+
+#question end
 

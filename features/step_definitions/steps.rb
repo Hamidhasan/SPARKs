@@ -73,3 +73,34 @@ Then(/^I should be able to see the new paper's being completed$/) do
   # pending # express the regexp above with the code you wish you had
 end
 
+#question steps
+Given(/^I'm on the question manage page$/) do
+visit(new_question_path)
+end
+When(/^I add a new question$/) do
+fill_in 'Id', :with => "3"
+fill_in 'Content', :with => "why the result doesn't match?"
+click_button 'Create Question'
+end
+Then(/^I should be able to see the new question's page$/) do  
+assert page.has_content?("Question was successfully created")
+end
+
+
+When (/^I add a new anwser$/) do
+assert page.has_css?('input')
+
+end
+Then (/^I should see a button to choose my anwser file$/) do
+ assert page.has_selector?("input")
+end
+
+When(/^I add a new question without content$/) do
+fill_in 'Id', :with => "3"
+click_button 'Create Question'
+end
+Then(/^I should see some errors on the page$/) do
+assert page.has_css?('div.field_with_errors')
+end
+#question end
+

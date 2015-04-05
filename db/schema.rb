@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150404131803) do
+ActiveRecord::Schema.define(:version => 20150405031618) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -32,5 +32,18 @@ ActiveRecord::Schema.define(:version => 20150404131803) do
   end
 
   add_index "papers", ["author_id"], :name => "index_papers_on_author_id"
+
+  create_table "questions", :force => true do |t|
+    t.text     "content"
+    t.integer  "paper_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  add_index "questions", ["paper_id"], :name => "index_questions_on_paper_id"
 
 end
