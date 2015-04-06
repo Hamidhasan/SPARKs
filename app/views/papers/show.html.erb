@@ -20,7 +20,7 @@
   <%= @paper.demo %>
 </p>
 
-<!-->
+<!--
 <table>
 <% Question.find_by_paper_id(@paper.id) do |question| %>
   	<tr>
@@ -33,6 +33,6 @@
 </table>
 
 <%= link_to 'New Question', new_question_path(@paper_id)%>
--->
+-->	
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
