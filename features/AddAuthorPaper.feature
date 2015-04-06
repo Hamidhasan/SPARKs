@@ -20,16 +20,12 @@ Feature: Create a author, signin and signout
 		Then I should not be able to see my page
         
         Scenario: Add a paper title
-   		Given I've successfully signed in
-    		When I click to create a new paper
-                Then I should be able to see paper creation page
-                When I add a new title
+   		Given I'm on the paper creation page
+    		When I add a new title
     		Then I should be able to see the new paper's page
 
-  	Scenario: Upload files with title
-    		Given I've successfully signed in
-    		When I click to create a new paper
-                Then I should be able to see paper creation page
+  	Scenario: Upload a paper with title
+    		Given I'm on the paper creation page
     		When I add a new title and upload a new file and a demo
     		Then I should be able to see the new paper's being completed
 		
