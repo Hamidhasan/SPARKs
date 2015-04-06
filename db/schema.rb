@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150405233415) do
+ActiveRecord::Schema.define(:version => 20150406025123) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20150405233415) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.text     "answertext"
   end
 
   add_index "questions", ["paper_id"], :name => "index_questions_on_paper_id"
