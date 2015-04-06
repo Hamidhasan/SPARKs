@@ -1,0 +1,31 @@
+Github link:
+
+https://github.com/Hamidhasan/SPARKs
+Note: It is currently public, but I will try to get it made private after the submission/at the start of iteration 2.
+
+Pivotal Tracker Link:
+
+https://www.pivotaltracker.com/n/projects/1309830
+
+
+Some notes:
+ - The Low-Fi mockups are attached as pdfs to the relevant user stories in Pivotal Tracker. You can access them by clicking on the user stories with the little paperclip on the icon, and then seeing the attachment.
+
+ - We have functionality for adding/creating questions and answers, but it is currently not linked to the paper (work in progress)
+ 
+ - One of our cucumber tests fails, but when manually running it, it seems to work correctly. We are not sure what the problem is; the rest of the cucumber tests are passing or unimplemented (we have several). The failing test is:
+ Scenario: Add a new paper                           # features/AddAuthorPaper.feature:22
+   Given I've successfully signed in                 # features/step_definitions/steps.rb:49
+   Then I want to create a new paper                 # features/step_definitions/steps.rb:56
+   When I add a new title and upload files           # features/step_definitions/steps.rb:60
+     Called id for nil, which would mistakenly be 8 -- if you really wanted the id of nil, use object_id (RuntimeError)
+     ./app/controllers/papers_controller.rb:44:in `create'
+     ./features/step_definitions/steps.rb:65:in `/^I add a new title and upload files$/'
+     features/AddAuthorPaper.feature:25:in `When I add a new title and upload files'
+ 
+  [When trying to manually add a new paper, and follow the steps above, it works. I think this is a specific cucumber error that we didn't configure correctly]
+ 
+ - For uploading images, the runner needs to have installed "imagemagick" on their computer: see the piazza question: 
+ https://piazza.com/class/i4n0vj014y5dt?cid=176
+ 
+ - The Low-Fi mockups are attached as pdfs to the relevant user stories in Pivotal Tracker. You can access them by clicking on the user stories with the little paperclip on the icon, and then seeing the attachment.
