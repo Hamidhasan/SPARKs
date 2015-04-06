@@ -46,27 +46,7 @@ Then(/^I should not be able to see my page$/) do
   assert page.has_content?("Invalid email/password combination!")
 end
 
-Given(/^I'm on the paper creation page$/) do
-  visit(new_paper_path)
-end
 
-When(/^I add a new title$/) do
-  fill_in 'Title', :with => "Scientific Research Sharing"
-  click_button 'Create Paper'
-end
-
-Then(/^I should be able to see the new paper's page$/) do
-  assert page.has_content?("Paper was successfully created")
-end
-
-When(/^I add a new title and upload a new file$/) do
-  # pending # express the regexp above with the code you wish you had
-  fill_in 'Title', :with => "Research paper"
-  #click_button 'Browse'
-  #click_button 'Cancel'
-  #click_button 'Open'
-  click_button 'Create Paper'
-end
 
 Then(/^I should be able to see the new paper's being completed$/) do
   assert page.has_content?("Paper was successfully created")
