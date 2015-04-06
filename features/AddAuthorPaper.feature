@@ -19,13 +19,9 @@ Feature: Create a author, signin and signout
 		When I login by using using wrong email or password
 		Then I should not be able to see my page
         
-        Scenario: Add a paper title
-   		Given I'm on the paper creation page
-    		When I add a new title
+        Scenario: Add a new paper
+   		Given I've successfully signed in
+    		Then I want to create a new paper
+                When I add a new title and upload files
     		Then I should be able to see the new paper's page
 
-  	Scenario: Upload a paper with title
-    		Given I'm on the paper creation page
-    		When I add a new title and upload a new file and a demo
-    		Then I should be able to see the new paper's being completed
-		
