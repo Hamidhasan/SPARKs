@@ -20,26 +20,19 @@
   <%= @paper.demo %>
 </p>
 
+<!-->
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% Question.find_by_paper_id(@paper_id) do |question| %>
-	<% if question.paper_id == @paper.id%>
+<% Question.find_by_paper_id(@paper.id) do |question| %>
   	<tr>
-    	<td><%= question.content %></td>
+    	<td><%= question %></td>
     	<td><%= link_to 'Show', question %></td>
-    	<td><%= link_to 'Edit', edit_question_path(question) %></td>
+    	<td><%= link_to 'Edit', edit_question_path(question.object_id) %></td>
     	<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
-	<% end %>
 <% end %>
 </table>
 
+<%= link_to 'New Question', new_question_path(@paper_id)%>
+-->
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
