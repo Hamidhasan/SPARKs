@@ -10,16 +10,19 @@
   </tr>
 
 <% @papers.each do |paper| %>
-  <tr>
-    <td><%= paper.title %></td>
-    <td><%= paper.author %></td>
-    <td><%= link_to 'Show', paper %></td>
-    <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-    <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+	<% if paper.author_id == current_author.id%>
+  	<tr>
+    	<td><%= paper.title %></td>
+    	<td><%= paper.author %></td>
+    	<td><%= link_to 'Show', paper %></td>
+    	<td><%= link_to 'Edit', edit_paper_path(paper) %></td>
+    	<td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  	</tr>
+	<% end %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Paper', new_paper_path %>
+<%= link_to 'New Paper', new_paper_path %><br />
+<%= link_to 'Sign out', signout_path%>

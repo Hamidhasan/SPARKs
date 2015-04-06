@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       render :new
     else
       sign_in author
-      redirect_to author
+      redirect_to papers_path
     end
   end
   

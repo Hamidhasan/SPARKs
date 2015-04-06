@@ -7,7 +7,7 @@ class AuthorsController < ApplicationController
     @author = Author.new(params[:author])
     if @author.save
       sign_in(@author)
-      redirect_to @author, notice: 'Author was successfully created!'
+      redirect_to papers_path, notice: 'Author was successfully created!'
     else
       render action: "new"
     end

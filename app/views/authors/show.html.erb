@@ -1,5 +1,5 @@
-<h1>Author <%= @author.id %> Homepage</h1>
-<%= form_for(@author) do |f| %>
+<h1>Author <%= @author.name %> Homepage</h1>
+<%= simple_form_for(@author) do |f| %>
 	<%= link_to 'Sign out', signout_path%>
 <% end %>
 
