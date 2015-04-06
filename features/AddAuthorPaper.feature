@@ -21,8 +21,7 @@ Feature: Create a author, signin and signout
         
         Scenario: Add a new paper
    		Given I've successfully signed in
-    		When I click to create a new paper
-                Then I should be able to see paper creation page
+    		Then I want to create a new paper
                 When I add a new title and upload files
     		Then I should be able to see the new paper's page
 
