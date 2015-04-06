@@ -47,11 +47,10 @@ Then(/^I should not be able to see my page$/) do
 end
 
 Given(/^I've successfully signed in$/) do
-  fill_in 'Name', :with => "test0"
+  visit(signin_path)
   fill_in 'Email', :with => "test0@upenn.com"
-  fill_in 'Password', :with => "000000", :match => :prefer_exact
-  fill_in 'Password confirmation', :with => "000000", :match => :prefer_exact
-  click_button 'Create'
+  fill_in 'Password', :with => "000000"
+  click_button 'Log in'
 end
 
 Then(/^I want to create a new paper$/) do
@@ -66,7 +65,7 @@ When(/^I add a new title and upload files$/) do
   click_button 'Create Paper'
 end
 
-Then(/^I should be able to see the new paper's being completed$/) do
+Then(/^I should be able to see the new paper's page$/) do
   assert page.has_content?("Paper was successfully created")
   # pending # express the regexp above with the code you wish you had
 end
