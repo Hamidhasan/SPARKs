@@ -1,0 +1,4 @@
+class AddAnswertextToQuestions < ActiveRecord::Migration
+  def change
+  end
+end
